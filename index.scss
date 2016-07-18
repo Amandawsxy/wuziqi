@@ -1,0 +1,436 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	background:url(img/beijing11.png);
+	background-size: cover;
+	overflow:hidden;
+	//position:relative;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+.kaichang{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 99999;
+	width: 100%;
+	height:100%;
+	opacity: 1;
+	overflow: hidden;
+	background:url(img/beijing.jpg);
+	background-size: cover;
+	transition:transform 1s ease 1s,
+	top 0.3s ease 2s,
+	left 0.3s ease 2s,
+	opacity 0.1s ease 2.1s;
+}
+.kaichang.kaishi{
+	transform:rotate(1080deg) scale(0);
+	top:50%;
+	left:50%;
+	opacity:0;
+}
+$width:600px;
+%juzhong{
+	position: absolute;
+	left: 0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin: auto;
+}
+.left{
+    position: absolute;
+	left: -$width/3;
+	top: 0;
+	width: $width/3;
+	height: $width;
+	background:rgba(255,255,255,0.6);
+	animation:xuanzhuanzuo .8s ease;
+	$height:180px;
+	.youxi{
+		width: $width/3;
+		height: $width/4;
+		//background:url(youxi.png);
+		//background-size:cover;
+		margin-top: $width/20;
+		.youxiyou{
+			width:100px;
+			height:$width/4;
+			float:left;
+			margin-left: 20px;
+			.shang{
+				width: 60px;
+				height:60px;
+				margin-top:20px;
+				margin-left: 20px;
+				background:url(img/aa.png);
+				background-size:cover;
+			}
+			.xia{
+				width: 60px;
+				height:60px;
+				margin-top:5px;
+				margin-left: 20px;
+				background:url(img/bb.png);
+				background-size:cover;
+			}
+		}
+		.youxizuo{
+			width:100px;
+			height:$width/4;
+			//float:right;
+			margin-left:90px;
+			background: url(img/dd.png);
+			background-size:cover;
+		}
+	}
+	.qiehuan{
+		width: $width/3.75;
+		height: $height/4.5;
+		//background:green;
+		margin: $width/20 $width/30;
+		position:relative;
+
+		.mode{
+		width:100%;
+		height:$width/15;
+        line-height: $width/15;
+        background:#7C8C72 url(img/1111.png);
+        float: left;
+        border-radius: 8px;
+        text-align: center;
+        //color:#fff;
+			z-index: 111;
+			cursor: pointer;
+	    }
+
+	    .renren{
+		width:100%;
+		height:$width/15;
+		margin: $width/20 0;
+        line-height: $width/15;
+        float: left;
+        background:#7C8C72 url(img/22.png);
+        border-radius: 8px;
+        text-align: center;
+        //color:#fff;
+			z-index: 2222;
+			//display:none;
+			margin-top: $width/20;
+			opacity:0;
+			cursor: pointer;;
+		}
+
+	    .renji{
+		width:100%;
+		height:$width/15;
+        line-height: $width/15;
+        float: left;
+        background:#7C8C72 url(img/33.png);
+        border-radius: 8px;
+        text-align: center;
+        color:#fff;
+			z-index: 2222;
+			//display:none;
+			margin-top: $width/15;
+			opacity:0;
+			cursor: pointer;
+			transition:all 1s ease;
+			transform:translateY(-100%);
+		}
+	}
+	.restart{
+		width: $width/3.75;
+		height: $width/15;
+		background:#7C8C72 url(img/44.png);
+		line-height: $width/15;
+		text-align: center;
+		color: #fff;
+		float: left;
+		border-radius: 8px;
+		position:absolute;
+		margin-left: $width/30;
+		//top:100%;
+		//margin-top: -20px;
+		cursor: pointer;
+	}
+	.regular{
+		width: $width/3.75;
+		height:$width/15;
+		background: #7C8C72;
+		line-height: $width/15;
+		text-align: center;
+		color: #fff;
+		float: left;
+		border-radius: 8px;
+		//position:absolute;
+		margin-left: $width/30;
+		margin-top:-80px;
+		cursor: pointer;
+	}
+	.regular-xijie{
+		width: $width/3.75;
+		height:170px;
+		background: #7C8C72;
+		//line-height: $width/15;
+		text-align: center;
+		color: #fff;
+		float: left;
+		border-radius: 8px;
+		//position:relative;
+		margin-left: $width/30;
+		margin-top: 70px;
+		//display: none;
+		transition:all .8s ease;
+		opacity:0;
+		transform:translatrY(200%);
+	}
+	.regular:hover .regular-xijie{
+        opacity:1;
+		transform:translateY(90%);
+	}
+	.regular-xijie p{
+		//position: absolute;
+		float: left;
+		font-size: 12px;
+		top:0;
+		left:0;
+		width: $width/3.75;
+		line-height:20px;
+	}
+}
+
+.con{
+	@extend %juzhong;
+	width: 100%;
+	height: 100%;
+    overflow: hidden;
+}
+.qipai{
+	@extend %juzhong;
+	width: $width;
+	height: $width;
+	background:rgba(255,255,255,0.6);
+}
+.qipai span{
+	display: block;
+	width:$width/50;
+	height:$width/50;
+	background:#000;
+	z-index: 10000;
+	position:absolute;
+	border-radius:50%;
+	animation:diaoluo .4s ease;
+	&:nth-of-type(1){
+		top:3.5*$width/15;
+		left:3.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(2){
+		top:3.5*$width/15;
+		left:11.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(3){
+		top:7.5*$width/15;
+		left:7.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(4){
+		top:11.5*$width/15;
+		left:3.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(5){
+		top:11.5*$width/15;
+		left:11.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+}
+
+@for $i from 1 through 5{
+	.qipai span:nth-of-type(#{$i}){
+		animation-delay:$i*0.3s;
+	}
+}
+
+@keyframes diaoluo {
+	0%{
+		transform:translate3d(0,-600px,0);
+		opacity:0;
+	}
+	100%{
+		transform:translate3d(-45%,-45%,0);
+		opacity:1;
+	}
+}
+.qizi{
+	width: $width/15-$width/60;
+	height: $width/15-$width/60;
+	float: left;
+	border-radius: 50%;
+	z-index: 33333333;
+	position: relative;
+	margin: 5px;
+
+}
+ .bai{
+	background:url(img/111.png);
+	 background-size: cover;
+	 	z-index: 33333333;
+}
+ .hei{
+	background:url(img/222.png);
+	 background-size: cover;
+	 	z-index: 33333333;
+ }
+.heng{
+	position: absolute;
+    height: 1px;
+    background:#7C8C72;
+    left: $width/30;
+    display: block;
+	opacity: 0;
+    width: $width - $width/15;
+	animation:feiru .3s ease forwards;
+}
+.shu{
+    position: absolute;
+    top:$width/30;
+    background:#7C8C72;
+    width: 1px;
+    display: block;
+	opacity: 0;
+	height: $width - $width/15;
+	animation:feirus .3s ease forwards;
+}
+@keyframes feiru {
+	0%{
+		transform: translate3d(-1000px, -100px, 0);
+		opacity: 0;
+	}
+	100%{
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+@keyframes feirus {
+	0%{
+		transform:translate3d(-1000px,-100px,0);
+		opacity:0;
+	}
+	100%{
+		transform:translate3d(0,0,0);
+		opacity:1;
+	}
+
+}
+@for $i from 0 through 14{
+	.qipai b:nth-of-type(#{$i+1}){
+	top:$width/30+$i*$width/15;
+		animation:feiru .5s ease $i*0.07s forwards;
+}
+}
+
+@for $i from 0 through 14{
+	.qipai i:nth-of-type(#{$i+1}){
+	left:$width/30+$i*$width/15;
+		animation:feirus .5s ease $i*0.07s forwards;
+}
+}
+.right{
+	height: $width;
+	width: $width/3;
+	background:rgba(255,255,255,0.6);
+	position: absolute;
+	top: 0;
+	left: $width;
+}
+.right .time{
+	width: 100%;
+	height:40px;
+	//text-align: center;
+	//padding: $width/60 0;
+	float: left;
+	background: url(img/666.png);
+	color:#7C8C72;
+	margin-top:40px;
+	margin-left:- $width/65;
+	font-weight: bold;
+}
+.yuandian{
+	width:8px;
+	height:8px;
+	border-radius:50%;
+	background:#fff;
+	position:absolute;
+	top:71px;
+	left:71px;
+	z-index: 666;
+}
+.zhizhen{
+	width:2px;
+	height:70px;
+	background:#fff;
+	position:absolute;
+	top:20px;
+	left:73px;
+	z-index: 666;
+}
+.zhizhen {
+	border-radius: 5px;
+	//-webkit-transform-origin: 25% ;
+	transform-origin:  25% 80% ;
+	//-webkit-animation: zhuan 60s steps(60, end) infinite;
+	animation: zhuan 60s steps(60, end) infinite;
+}
+@keyframes zhuan {
+	to {
+		transform: rotate(360deg);
+	}
+}
+//@-webkit-keyframes zhuan {
+//	to {
+//		transform: rotate(360deg) translate3d(0, 0, 0);
+//	}
+//}
+.right .clock ul{
+	width: $width/4;
+	height: $width/4;
+	background: #7C8C72;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+	margin: 10px $width/37.5;
+	position: relative;
+	li{
+		width:$width/300;
+		height: $width/70;
+		background: #BCBCBC;
+		transition: all 0.8s ease;
+		@extend %juzhong;
+		&:nth-child(5n){
+			width:$width/300;
+			height:$width/50;
+			background: #fff;
+		}
+	}
+	#nowtime{
+		height:$width/20;
+		width:$width/10;
+		background: rgba(0,0,0,0);
+		@extend %juzhong;
+		line-height:$width/20;
+		text-align: center;
+		color: #fff;
+	}
+}
+@for $i from 1 through 60{
+	.clock li:nth-child(#{$i}){
+		transform: rotateZ($i*6deg) translateY($width/8-$width/60);
+	}
+}
